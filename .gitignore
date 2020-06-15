@@ -1,5 +1,5 @@
 node_modules/
-dist/
+deloy/dist/
 examples/
 npm-debug.log
 yarn-error.log

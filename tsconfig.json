@@ -2,9 +2,10 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "module": "commonjs",
+    "rootDir": ".",
     "moduleResolution": "node",
     "noImplicitAny": false,
-    "outDir": "./dist",
+    "outDir": "./deloy/dist",
     "pretty": true,
     "preserveConstEnums": true,
     "removeComments": true,
