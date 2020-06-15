@@ -19,7 +19,7 @@ var options = {
             "sasl.mechanisms": "SCRAM-SHA-256",
             "sasl.username": "a830y1na",
             "sasl.password": "ShGeGU7mi30Yp0tyUpYXBNmQF2kiyvBu",
-            // "debug": "generic,broker,security",
+            "debug": "generic,broker,security",
             'enable.auto.commit':true,
         }
     },

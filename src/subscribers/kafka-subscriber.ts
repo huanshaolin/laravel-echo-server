@@ -18,24 +18,26 @@ export class KafkaSubscribe implements Subscriber {
         this.consumer = new Kafka.KafkaConsumer(options.databaseConfig.kafka, {
             "auto.offset.reset": "beginning"
         })
+        this.consumer.connect();
     }
     /**
      * Subscribe to events to broadcast.
      */
     subscribe(callback):Promise<any> {
         return new Promise((resolve,reject)=>{
+          console.log("====")
             this.consumer.on("error", function(err) {
               console.log("=====================",err)
                 reject(err)
             })
-            this.consumer.on("ready", function(arg) {
+            this.consumer.on("ready", (arg)=> {
                 Log.success(`Consumer ${arg.name} ready`);
                 this.consumer.subscribe(this.options.otherConfig.kafkaTopics);
                 this.consumer.consume();
                 resolve();
               });
 
-            this.consumer.on("data", function(message) {
+            this.consumer.on("data", (message)=>{
               if(!this.options.databaseConfig.kafka["enable.auto.commit"]){
                 this.consumer.commit(message);
               }
