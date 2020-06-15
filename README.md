@@ -13,6 +13,10 @@ The following are required to function properly.
 Additional information on broadcasting with Laravel can be found on the
 official docs: <https://laravel.com/docs/master/broadcasting>
 
+## Special (install on window)
+
+Require install: windows-build-tools and node-gyp
+
 ## Getting Started
 
 Install npm package globally with the following command:
