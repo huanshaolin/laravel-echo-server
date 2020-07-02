@@ -13,12 +13,8 @@ var options = {
         },
         kafka:{
             "group.id": "a830y1na-echo",
-            "metadata.broker.list": "moped-01.srvs.cloudkafka.com:9094,moped-02.srvs.cloudkafka.com:9094,moped-03.srvs.cloudkafka.com:9094",
+            "metadata.broker.list": "207.46.227.84:9092,207.46.227.84:9093,207.46.227.84:9094",
             "socket.keepalive.enable": true,
-            "security.protocol": "SASL_SSL",
-            "sasl.mechanisms": "SCRAM-SHA-256",
-            "sasl.username": "a830y1na",
-            "sasl.password": "ShGeGU7mi30Yp0tyUpYXBNmQF2kiyvBu",
             // "debug": "generic,broker,security",
             'enable.auto.commit':true,
         }

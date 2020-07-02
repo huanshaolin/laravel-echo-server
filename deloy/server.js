@@ -1,7 +1,7 @@
 const Echo = require("./dist");
 const { constants } = require('crypto');
 var options = {
-    authHost: 'http://172.18.0.5:8001',
+    authHost: 'http://app:8001',
     authEndpoint: '/auth/broadcasting',
     clients: [],
     database: 'sqlite',
