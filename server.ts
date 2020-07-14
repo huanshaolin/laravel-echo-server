@@ -17,6 +17,11 @@ var options = {
             "socket.keepalive.enable": true,
             // "debug": "generic,broker,security",
             'enable.auto.commit':true,
+        },
+        rabbimmq:{
+            uri:"amqp://rabbitmq:w5nA4EcP6hMcCTCX9CHKJ7@23.101.30.117:5672",
+            queue:"task_queue",
+            durable:true
         }
     },
     devMode: true,
@@ -32,7 +37,8 @@ var options = {
     subscribers: {
         http: true,
         redis: false,
-        kafka:true,
+        kafka:false,
+        rabbitmq:true
     },
     apiOriginAllow: {
         allowCors: false,

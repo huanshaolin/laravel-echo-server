@@ -7,3 +7,13 @@ export interface Subscriber {
      */
     subscribe(callback: Function): Promise<any>;
 }
+
+export interface RabbitMQOption {
+    //Uri connect rabbitmq example: amqp://guest:guest@localhost:5672/
+    uri:string
+
+    //Name queue connect to rabbitmq
+    queue:string
+
+    durable:boolean
+}

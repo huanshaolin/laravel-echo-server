@@ -1,4 +1,5 @@
-import { HttpSubscriber, RedisSubscriber, Subscriber,KafkaSubscribe } from './subscribers';
+import { HttpSubscriber, RedisSubscriber, 
+    Subscriber,KafkaSubscribe,RMQSubscribe } from './subscribers';
 import { Channel } from './channels';
 import { Server } from './server';
 import { HttpApi } from './api';
@@ -109,6 +110,8 @@ export class EchoServer {
                 this.subscribers.push(new RedisSubscriber(this.options));
             if (this.options.subscribers.kafka)
                 this.subscribers.push(new KafkaSubscribe(this.options));
+            if (this.options.subscribers.rabbitmq)
+                this.subscribers.push(new RMQSubscribe(this.options));
 
             this.httpApi = new HttpApi(io, this.channel, this.server.express, this.options.apiOriginAllow);
             this.httpApi.init();
