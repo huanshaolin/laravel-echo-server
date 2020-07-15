@@ -30,9 +30,10 @@ export class RMQSubscribe implements Subscriber {
                         durable: this.option.durable
                     });
                     channel.prefetch(1);
-                    console.log(" [*] Waiting for messages in %s. To exit press CTRL+C", queue);
-                    channel.consume(queue, function(msg) {
+                    console.log(" [*] Waiting for messages in %s", queue);
+                    channel.consume(queue, (msg)=> {
                         try {
+                            Log.info("===="+msg.content.toString())
                             let message = JSON.parse(msg.content.toString());
 
                             if (this.options.devMode) {

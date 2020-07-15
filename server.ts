@@ -2,7 +2,7 @@ const Echo = require("./src");
 const { constants } = require('crypto');
 
 var options = {
-    authHost: 'http://localhost:8000',
+    authHost: 'http://localhost:8001',
     authEndpoint: '/auth/broadcasting',
     clients: [],
     database: 'sqlite',
@@ -19,8 +19,8 @@ var options = {
             'enable.auto.commit':true,
         },
         rabbimmq:{
-            uri:"amqp://rabbitmq:w5nA4EcP6hMcCTCX9CHKJ7@23.101.30.117:5672",
-            queue:"task_queue",
+            uri:"amqp://rabbitmq:w5nA4EcP6hMcCTCX9CHKJ7@localhost:5672",
+            queue:"messages_chat",
             durable:true
         }
     },
