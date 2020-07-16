@@ -2,7 +2,7 @@ FROM node:10.16.3
 
 WORKDIR /usr/src/app
 
-ADD ./deloy ./
+ADD ./dist ./
 
 ADD ./package.json ./
 

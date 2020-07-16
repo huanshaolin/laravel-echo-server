@@ -20,6 +20,7 @@ export class RMQSubscribe implements Subscriber {
      */
     subscribe(callback):Promise<any> {
         return new Promise((resolve,reject)=>{
+            console.log(this.option)
             amqp.connect(this.option.uri, (error, connection)=> {
                 if(error) reject(error);
                 connection.createChannel((error, channel) =>{

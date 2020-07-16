@@ -106,6 +106,7 @@ export class Channel {
      */
     joinPrivate(socket: any, data: any): void {
         this.private.authenticate(socket, data).then(res => {
+            data.channel = res.channel || data.channel
             socket.join(data.channel);
 
             if (this.isPresence(data.channel)) {
