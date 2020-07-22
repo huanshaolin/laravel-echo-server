@@ -1,13 +1,16 @@
 const Echo = require("./src");
 const { constants } = require('crypto');
-
 var options = {
-    authHost: 'http://localhost:8001',
-    authEndpoint: '/auth/broadcasting',
+    authHost: process.env.AUTH_HOST,
+    authEndpoint: process.env.AUTH_ENDPOINT,
     clients: [],
     database: 'redis',
     databaseConfig: {
-        redis: {"port":"6379","host":"146.196.65.118","db":"1","password":"bnVb5EoOMIAkmp1rFwrCuXXb6LLTfcFElKf3OSLuJLbQUN0cwPTyW9Wrgrac5kdBiSWjl1Osfg"},
+        redis: {
+            "port": process.env.REDIS_PORT || "6379",
+            "host": process.env.REDIS_HOST,
+            "db":process.env.REDIS_DB,
+            "password":process.env.REDIS_PASSWORD || ""},
         sqlite: {
             databasePath: '/database/laravel-echo-server.sqlite'
         },
@@ -19,8 +22,8 @@ var options = {
             'enable.auto.commit':true,
         },
         rabbimmq:{
-            uri:"amqp://rabbitmq:w5nA4EcP6hMcCTCX9CHKJ7@localhost:5672",
-            queue:"messages_chat",
+            uri:process.env.RABBITMQ_URI,
+            queue:process.env.RABBITMQ_QUEUE,
             durable:true
         }
     },
